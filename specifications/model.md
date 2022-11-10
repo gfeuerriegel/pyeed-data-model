@@ -10,7 +10,7 @@ PyEED is a Python-encoded data model of an Enzyme Engineering Database. It suppo
 - __amino_acid_sequence*__
   - Type: string
   - Description: The amino acid sequence of the protein sequence object.
-- __nr_id__
+- __ncbi_id__
   - Type: string
   - Description: Identifier for the NCBI NR database
 - __uniprot_id__
@@ -23,6 +23,10 @@ PyEED is a Python-encoded data model of an Enzyme Engineering Database. It suppo
 - __organism__
   - Type: [Organism](#Organism)
   - Description: Corresponding organism 
+- __substrate__
+  - Type: string
+  - Description: Name of plastics substrate that the protein is acting on.
+  - Multiple: True
 - __domain__
   - Type: [Domain](#Domain)
   - Description: Domain specification
@@ -36,13 +40,16 @@ PyEED is a Python-encoded data model of an Enzyme Engineering Database. It suppo
   - Multiple: True
 - __annotation__
   - Type: [Annotation](#Annotation)
-  - Description: Position-wise annotation of the amino acid seqeunce
+  - Description: Position-wise annotation of the amino acid sequence
   - Multiple: True
 
 ### Organism
 
-- __ncbi_taxonomy_id*__
+- __name*__
   - Type: string
+  - Description: Systematic name of the organism.
+- __ncbi_taxonomy_id__
+  - Type: integer
   - Description: NCBI Taxonomy ID to identify the organism
 
 ### Domain

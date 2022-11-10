@@ -15,7 +15,11 @@ class Organism(sdRDM.DataModel):
         xml="@id",
     )
 
-    ncbi_taxonomy_id: str = Field(
+    name: str = Field(
+        ..., description="Name of the organism"
+    )
+    
+    ncbi_taxonomy_id: Optional[int] = Field(
         ..., description="NCBI Taxonomy ID to identify the organism"
     )
 

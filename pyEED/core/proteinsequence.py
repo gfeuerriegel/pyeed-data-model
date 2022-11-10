@@ -28,7 +28,7 @@ class ProteinSequence(sdRDM.DataModel):
         ..., description="The amino acid sequence of the protein sequence object."
     )
 
-    nr_id: Optional[str] = Field(
+    ncbi_nr_id: Optional[str] = Field(
         description="Identifier for the NCBI NR database", default=None
     )
 
@@ -137,3 +137,25 @@ class ProteinSequence(sdRDM.DataModel):
             )
         ]
         self.annotation = self.annotation + annotation
+
+    def add_to_organism(
+        self, name: str, ncbi_taxonomy_id: Optional[int] = None
+    ) -> None:
+        """
+        Adds an instance of "Organism" to the attribute "organism".
+
+        Args:
+
+
+            name(str): Taxonomical name of the source organism.
+
+
+            ncbi_taxonomy_id(int): Identifier of NCBI Taxonomy Database.
+        """
+        organism = [
+            Organism(
+                name=name,
+                ncbi_taxonomy_id=ncbi_taxonomy_id,
+            )
+        ]
+        self.organism = self.organism + organism
