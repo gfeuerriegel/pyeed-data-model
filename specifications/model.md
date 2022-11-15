@@ -49,7 +49,7 @@ PyEED is a Python-encoded data model of an Enzyme Engineering Database. It suppo
   - Type: string
   - Description: Systematic name of the organism.
 - __ncbi_taxonomy_id__
-  - Type: integer
+  - Type: string
   - Description: NCBI Taxonomy ID to identify the organism
 
 ### Domain
